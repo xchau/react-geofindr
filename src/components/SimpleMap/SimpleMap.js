@@ -1,69 +1,85 @@
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
 import {GoogleMapLoader, GoogleMap, withGoogleMap, Marker} from "react-google-maps";
 
-/* global google */
-import {
-  default as React,
-  Component,
-} from "react";
-
-// import {
-//   withGoogleMap,
-//   GoogleMap,
-//   Marker,
-// } from "react-google-maps";
-
-const AccessingArgumentsExampleGoogleMap = withGoogleMap(props => (
-  <GoogleMap
-    defaultZoom={4}
-    defaultCenter={props.center}
-    onClick={props.onMapClick}
-  >
-    {props.markers.map((marker, index) =>
-      <Marker position={marker.position} key={index} />
-    )}
-  </GoogleMap>
+const MapElem = withGoogleMap(props => (
+  <div>
+    <GoogleMap
+      onClick={props.onMapClick}
+      ref={props.onMapMounted}
+      center={props.center}
+      zoom={props.zoom}
+      defaultOptions={{
+        streetViewControl: false
+      }}
+    >
+      {
+        props.markers.map((marker, idx) => {
+          return <Marker
+            key={idx}
+            position={marker}
+            icon="https://campus-map.stanford.edu/images/new/cm-target.png"
+            title={`LAT: ${marker.lat.toFixed(2)}-ish, LNG: ${marker.lng.toFixed(2)}-ish`}
+          />
+        })
+      }
+    </GoogleMap>
+  </div>
 ));
 
-/*
- * https://developers.google.com/maps/documentation/javascript/examples/event-arguments
- *
- * Add <script src="https://maps.googleapis.com/maps/api/js"></script> to your HTML to provide google.maps reference
- */
-export default class SimpleMap extends Component {
+class SimpleMap extends Component {
+  constructor(props) {
+    super(props);
 
-  state = {
-    markers: [],
-    center: new google.maps.LatLng(-25.363882, 131.044922),
-  };
+    this.state = {
+      center: {
+        lat: 22.0112183,
+        lng: 95.52067570000001
+      },
+      markers: [],
+      zoom: 8,
+      pegman: false
+    };
 
-  handleMapClick = this.handleMapClick.bind(this);
+    this.handleMapClick = this.handleMapClick.bind(this);
+    this.handleMapMounted = this.handleMapMounted.bind(this);
+  }
+
+  handleMapMounted(map) {
+    // ??????
+    this._map = map;
+  }
 
   handleMapClick(event) {
-    this.setState({
-      center: event.latLng,
-      markers: [
-        ...this.state.markers,
-        { position: event.latLng },
-      ],
-    });
+    const latLng = event.latLng.toJSON();
+    const nextState = this.state;
+
+    nextState.markers = [];
+    nextState.markers.push(latLng)
+    console.log(latLng);
+    console.log(nextState);
+
+    this.setState(nextState);
   }
 
   render() {
     return (
-      <AccessingArgumentsExampleGoogleMap
+      <MapElem
         containerElement={
-          <div style={{ height: `100%` }} />
+          <div style={{ height: `400px`, width: `400px` }} />
         }
         mapElement={
           <div style={{ height: `100%` }} />
         }
+        onMapMounted={this.handleMapMounted}
         onMapClick={this.handleMapClick}
         center={this.state.center}
         markers={this.state.markers}
+        pegman={this.state.pegman}
+        zoom={this.state.zoom}
+        streetViewControl="false"
       />
     );
   }
 }
 
-// export default SimpleMap;
+export default SimpleMap;
