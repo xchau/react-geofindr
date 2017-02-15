@@ -1,23 +1,15 @@
 import React, { Component } from 'react';
-// import {GoogleMapLoader, GoogleMap, withGoogleMap, Marker} from "react-google-maps";
+import { Router, Route, browserHistory } from 'react-router';
+import Nav from './components/NavBar/Nav';
 import SimpleMap from './components/SimpleMap/SimpleMap';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-
-
-    // this.logOut = this.logOut.bind(this);
-  }
-
-  // logOut() {
-  //   console.log(this.state.marker);
-  // }
-
   render() {
     return (
       <div>
+        <Nav>
+          <span className="App-NavName">GeoFindr</span>
+        </Nav>
         <SimpleMap />
       </div>
     );

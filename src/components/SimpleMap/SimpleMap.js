@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {GoogleMapLoader, GoogleMap, withGoogleMap, Marker} from "react-google-maps";
+import {GoogleMap, withGoogleMap, Marker} from "react-google-maps";
 
 const MapElem = withGoogleMap(props => (
   <div>
@@ -37,7 +37,6 @@ class SimpleMap extends Component {
       },
       markers: [],
       zoom: 8,
-      pegman: false
     };
 
     this.handleMapClick = this.handleMapClick.bind(this);
@@ -74,9 +73,7 @@ class SimpleMap extends Component {
         onMapClick={this.handleMapClick}
         center={this.state.center}
         markers={this.state.markers}
-        pegman={this.state.pegman}
         zoom={this.state.zoom}
-        streetViewControl="false"
       />
     );
   }

@@ -1,0 +1,13 @@
+.App-NavContainer {
+  align-items: center;
+  background-color: #e8fdf5;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+}
+
+.App-NavName {
+  color: #86ebd0;
+  font-family: Barrio, cursive;
+  font-size: 3rem;
+}
