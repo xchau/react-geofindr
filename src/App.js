@@ -9,6 +9,7 @@ class App extends Component {
     return (
       <Router history={browserHistory}>
         <Route path='/' component={Landing} />
+        <Route path='/play' component={Parent} />
 
       </Router>
     );

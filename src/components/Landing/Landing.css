@@ -30,12 +30,14 @@
 
 .App-Button {
   border: 1px solid black;
+  color: black;
   margin: 10px;
-  padding: 8px;
+  padding: 8px 12px;
+  text-decoration: none;
 }
 
 .App-Button:hover {
-  border: 1px solid #86ebd0;
+  border: 1px solid #5ad9b7;
   color: #86ebd0;
   cursor: pointer;
 }
