@@ -6,14 +6,13 @@ import Footer from '../Footer/Footer';
 import './Howto.css';
 
 function Howto(props) {
-  return (
-    <div>
+  return <div>
       <Nav>
         <Link to="/" className="Nav-LogoName">GeoFindr</Link>
       </Nav>
       <div className="Howto-Content">
         <div className="fl w-20 Howto-LeftContainer">
-         <Link to="/" component="Landing" className="br-100 bw-4 f2 Howto-Back">
+         <Link to="/" className="br-100 bw-4 f2 Howto-Back">
            <Icon name="chevronLeft" className="Howto-Icon" />
          </Link>
         </div>
@@ -33,7 +32,6 @@ function Howto(props) {
         <span className="Footer-FooterText">Powered by React + GoogleMaps API</span>
       </Footer>
     </div>
-  );
 }
 
 export default Howto;

@@ -11,10 +11,7 @@ function Landing(props) {
         <div>
           <span className="Landing-Name">GeoFindr</span>
         </div>
-
-
         <Link className="Landing-Button br3" to="play">Play!</Link>
-
         <div className="Landing-LinkRow">
           <a href="#" className="Landing-Link">
             About

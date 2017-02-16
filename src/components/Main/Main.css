@@ -1,6 +1,50 @@
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.Main-Content {
+  min-height: 100%;
+  margin-bottom: -40px;
+}
+
+.Main-Content:after {
+  content: "";
+  display: block;
+}
+
 .Main-SM-Container {
   background: url('./media/pattern.png');
+  border-bottom: 2px solid #e8fdf5;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+}
+
+.Main-ConsoleHeader {
+  background-color: #e8fdf5;
+  display: flex;
+  justify-content: center;
+  min-height: 20px;
+  padding: 10px;
+}
+
+.Main-HintsTitle {
+  font-family: Amatic SC, Raleway, sans-serif;
+  font-size: 1.6rem;
+}
+
+.Main-Console {
+  display: flex;
+  width: 100%;
+}
+
+.Main-HintContainer {
+  width: 50%;
+}
+
+.Main-SV-Container {
+  width: 50%;
 }

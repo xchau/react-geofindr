@@ -18,7 +18,7 @@ const MapElem = withGoogleMap(props => (
             key={idx}
             position={marker}
             icon="https://campus-map.stanford.edu/images/new/cm-target.png"
-            title={`LAT: ${marker.lat.toFixed(2)}-ish, LNG: ${marker.lng.toFixed(2)}-ish`}
+            title={`[${marker.lat.toFixed(2)}-ish, ${marker.lng.toFixed(2)}-ish]`} 
           />
         })
       }
@@ -29,15 +29,6 @@ const MapElem = withGoogleMap(props => (
 class SimpleMap extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      center: {
-        lat: 22.0112183,
-        lng: 95.52067570000001
-      },
-      markers: [],
-      zoom: 5,
-    };
 
     this.handleMapClick = this.handleMapClick.bind(this);
     this.handleMapMounted = this.handleMapMounted.bind(this);
@@ -50,17 +41,17 @@ class SimpleMap extends Component {
 
   handleMapClick(event) {
     const latLng = event.latLng.toJSON();
-    const nextState = this.state;
+    const nextState = this.props.state;
 
     nextState.markers = [];
     nextState.markers.push(latLng)
-    console.log(latLng);
-    console.log(nextState);
 
-    this.setState(nextState);
+    this.props.pinMarkerOnClick(nextState);
   }
 
   render() {
+    const { center, markers, zoom } = this.props.state;
+
     return (
       <MapElem
         containerElement={
@@ -71,9 +62,9 @@ class SimpleMap extends Component {
         }
         onMapMounted={this.handleMapMounted}
         onMapClick={this.handleMapClick}
-        center={this.state.center}
-        markers={this.state.markers}
-        zoom={this.state.zoom}
+        center={center}
+        markers={markers}
+        zoom={zoom}
       />
     );
   }

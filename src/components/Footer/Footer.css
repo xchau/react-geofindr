@@ -1,4 +1,4 @@
-.Footer-Footer {
+/*.Footer-Footer {
   background-color: #e8fdf5;
   padding: 20px;
   position: fixed;
@@ -9,16 +9,29 @@
   text-align: left;
   display: flex;
   justify-content: space-between;
-}
+  z-index: 100;
+}*/
 
-.Footer-Phantom {
+/*.Footer-Phantom {
   display: block;
   padding: 20px;
   height: 60px;
   width: 100%;
+}*/
+
+.Footer-Footer, .Main-Content:after {
+  height: 40px;
+}
+
+.Footer-Footer {
+  background-color: #e8fdf5;
+  padding: 15px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
 }
 
 .Footer-FooterText {
   color: #54565b;
-  font-size: 1.3rem;
+  font-size: 0.9rem;
 }
