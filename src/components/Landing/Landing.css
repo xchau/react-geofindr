@@ -1,0 +1,58 @@
+* {
+  font-family: Raleway, sans-serif;
+}
+
+.App-LandContainer {
+  /*background-color: #bfe4ec;*/
+  min-height: 100vh;
+  padding-top: 30px;
+}
+
+.App-LandHero {
+  background: url('./media/hero2.png');
+  margin-bottom: 10px;
+  min-height: 520px;
+  background-size: cover;
+}
+
+.App-LandRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.App-LandName {
+  color: #86ebd0;
+  font-family: Barrio, cursive;
+  font-size: 4rem;
+}
+
+.App-Button {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 8px;
+}
+
+.App-Button:hover {
+  border: 1px solid #86ebd0;
+  color: #86ebd0;
+  cursor: pointer;
+}
+
+.App-LandLinkRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 60%;
+}
+
+.App-LandLink {
+  color: darkgrey;
+  text-decoration: none;
+}
+
+.App-LandLink:hover {
+  color: lightcoral;
+}

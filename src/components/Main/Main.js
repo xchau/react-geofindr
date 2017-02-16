@@ -3,7 +3,9 @@ import SimpleMap from '../SimpleMap/SimpleMap';
 
 function Main(props) {
   return (
-    <SimpleMap />
+    <div>
+      <SimpleMap />
+    </div>
   );
 }
 
