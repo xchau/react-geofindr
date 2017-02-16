@@ -9,6 +9,7 @@ function Parent(props) {
       <Nav>
         <span className="App-NavName">GeoFindr</span>
       </Nav>
+      <Main />
       {props.children}
       <Footer>
         <span className="App-FooterText">GeoFindr</span>

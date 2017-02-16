@@ -1,0 +1,6 @@
+.App-SM-Container {
+  background: url('./media/pattern.png');
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}

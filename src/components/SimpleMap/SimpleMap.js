@@ -36,7 +36,7 @@ class SimpleMap extends Component {
         lng: 95.52067570000001
       },
       markers: [],
-      zoom: 8,
+      zoom: 5,
     };
 
     this.handleMapClick = this.handleMapClick.bind(this);
@@ -64,7 +64,7 @@ class SimpleMap extends Component {
     return (
       <MapElem
         containerElement={
-          <div style={{ height: `400px`, width: `400px` }} />
+          <div style={{ height: `400px`, width: `700px` }} />
         }
         mapElement={
           <div style={{ height: `100%` }} />
