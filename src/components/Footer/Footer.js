@@ -4,8 +4,8 @@ import './Footer.css';
 function Footer(props) {
   return (
     <div>
-      <div className="App-Phantom" />
-      <div className="App-Footer">
+      <div className="Footer-Phantom" />
+      <div className="Footer-Footer">
         {props.children}
       </div>
     </div>

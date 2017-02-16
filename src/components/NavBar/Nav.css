@@ -1,4 +1,4 @@
-.App-NavContainer {
+.Nav-Container {
   align-items: center;
   background-color: #e8fdf5;
   display: flex;
@@ -6,8 +6,15 @@
   height: 50px;
 }
 
-.App-NavName {
+.Nav-LogoName {
   color: #86ebd0;
   font-family: Barrio, cursive;
-  font-size: 3rem;
+  font-size: 3.5rem;
+  text-decoration: none;
+}
+
+.Nav-LogoName:hover {
+  color: #86ebd0;
+  font-weight: 800;
+  text-decoration: none;
 }

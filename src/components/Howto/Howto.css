@@ -1,0 +1,49 @@
+.Howto-LeftContainer {
+  align-items: center;
+  background-color: #f9c4b1;
+  display: flex;
+  min-height: 650px;
+  justify-content: center;
+}
+
+.Howto-RightContainer {
+  height: 650px;
+  padding: 0 50px;
+  text-align: center;
+}
+
+.Howto-Back {
+  align-items: center;
+  border: 2px solid white;
+  color: white;
+  display: flex;
+  height: 3.5rem;
+  justify-content: center;
+  width: 3.5rem;
+}
+
+.Howto-Back:hover {
+  color: white;
+  border: 2px solid white;
+}
+
+.Howto-Icon {
+  font-size: 2.7rem;
+}
+
+.Howto-Title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 20px;
+}
+
+.Howto-Link {
+  color: lightcoral;
+  text-decoration: none;
+}
+
+.Howto-Link:hover {
+  color: lightcoral;
+  font-weight: 700;
+  text-decoration: none;
+}

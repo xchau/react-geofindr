@@ -4,24 +4,24 @@ import './Landing.css';
 
 function Landing(props) {
   return (
-    <div className="App-LandContainer">
-      <div className="App-LandHero">
+    <div className="Landing-Container">
+      <div className="Landing-Hero">
       </div>
-      <div className="App-LandRow">
+      <div className="Landing-Row">
         <div>
-          <span className="App-LandName">GeoFindr</span>
+          <span className="Landing-Name">GeoFindr</span>
         </div>
 
 
-        <Link className="App-Button br3" to="play">Play!</Link>
+        <Link className="Landing-Button br3" to="play">Play!</Link>
 
-        <div className="App-LandLinkRow">
-          <a href="#" className="App-LandLink">
+        <div className="Landing-LinkRow">
+          <a href="#" className="Landing-Link">
             About
           </a>
-          <a href="#" className="App-LandLink">
+          <Link to="/howto" className="Landing-Link">
             How To Play
-          </a>
+          </Link>
         </div>
       </div>
     </div>

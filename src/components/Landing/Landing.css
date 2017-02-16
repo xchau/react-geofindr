@@ -1,60 +1,57 @@
-* {
-  font-family: Raleway, sans-serif;
-}
-
-.App-LandContainer {
-  /*background-color: #bfe4ec;*/
+.Landing-Container {
   min-height: 100vh;
   padding-top: 30px;
 }
 
-.App-LandHero {
+.Landing-Hero {
   background: url('./media/hero2.png');
   margin-bottom: 10px;
   min-height: 520px;
   background-size: cover;
 }
 
-.App-LandRow {
+.Landing-Row {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
 }
 
-.App-LandName {
+.Landing-Name {
   color: #86ebd0;
   font-family: Barrio, cursive;
-  font-size: 4rem;
+  font-size: 3.6rem;
 }
 
-.App-Button {
+.Landing-Button {
   border: 1px solid black;
   color: black;
-  margin: 10px;
+  margin-top: 4px;
   padding: 8px 12px;
   text-decoration: none;
 }
 
-.App-Button:hover {
+.Landing-Button:hover {
   border: 1px solid #5ad9b7;
   color: #86ebd0;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.App-LandLinkRow {
+.Landing-LinkRow {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 27px;
   margin-bottom: 20px;
   width: 60%;
 }
 
-.App-LandLink {
+.Landing-Link {
   color: darkgrey;
   text-decoration: none;
 }
 
-.App-LandLink:hover {
+.Landing-Link:hover {
   color: lightcoral;
+  text-decoration: none;
 }
