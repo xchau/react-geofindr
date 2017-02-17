@@ -37,14 +37,21 @@ html, body {
 }
 
 .Main-Console {
+  background: url('./media/pattern2.jpg');
   display: flex;
+  justify-content: center;
   width: 100%;
 }
 
 .Main-HintContainer {
-  width: 50%;
+  background-color: white;
+  border-left: 6px solid #e8fdf5;
+  margin-left: 15px;
+  width: 48%;
 }
 
 .Main-SV-Container {
-  width: 50%;
+  border-right: 6px solid #e8fdf5;
+  margin-right: 15px;
+  width: 48%;
 }

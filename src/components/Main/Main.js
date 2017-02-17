@@ -6,14 +6,13 @@ import './Main.css';
 class Main extends Component {
   constructor(props) {
     super(props);
-    // 47.604765, -122.169747
     this.state = {
       center: {
-        lat: 36.907646,
-        lng: 56.848103
+        lat: 20.907646,
+        lng: -0.848103
       },
       markers: [],
-      zoom: 3,
+      zoom: 2,
       place: {
         lat: 34.696694,
         lng: 135.188639
@@ -45,7 +44,7 @@ class Main extends Component {
       </div>
       <div className="Main-Console">
         <div className="Main-HintContainer">
-
+          TESTING TESTING TESTING
         </div>
         <div className="Main-SV-Container">
           <StreetView
