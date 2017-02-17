@@ -22,7 +22,18 @@ exports.seed = function(knex) {
       }, {
         id: 4,
         city_id: 4,
-        hint: 'Port city of population 986,826.'
+        hint: 'Port city of population 986,826.',
+        points: 400
+      }, {
+        id: 5,
+        city_id: 1,
+        hint: 'Port City.',
+        points: 400
+      }, {
+        id: 6,
+        city_id: 1,
+        hint: 'Country capital of Tokyo.',
+        points: 600
       }]);
     })
     .then(() => {

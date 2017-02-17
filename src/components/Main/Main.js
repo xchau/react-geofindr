@@ -19,18 +19,32 @@ class Main extends Component {
         lng: null
       },
       maxZoom: 10,
-      gestureHandling: 'none'
+      gestureHandling: 'none',
+      hints: [],
+      userPoints: 0
     }
-    // 38.308039, 26.376333
-    // lat: 34.696694,
-    // lng: 135.188639
 
     this.pinMarkerOnClick = this.pinMarkerOnClick.bind(this);
+    this.handleHintClick = this.handleHintClick.bind(this);
   }
 
   pinMarkerOnClick(nextState) {
-    // console.log(nextState.markers[0]);
     this.setState(nextState);
+  }
+
+  handleHintClick(hint, idx) {
+    const nextState = this.state;
+
+    if (!hint.showHint) {
+      nextState.hints[idx].showHint = true;
+      nextState.userPoints -= hint.points;
+      console.log(nextState.userPoints);
+
+      this.setState(nextState);
+    }
+    else {
+      console.log('Don\'t hide your precious hint(s)!');
+    }
   }
 
   render() {
@@ -47,7 +61,24 @@ class Main extends Component {
       </div>
       <div className="Main-Console">
         <div className="Main-HintContainer">
-          TESTING TESTING TESTING
+          {
+            this.state.hints.map((elem, idx) => <div className="Main-HintBox" key={elem.id}>
+              {
+                elem.showHint ?
+                <div className="Main-Hint">
+                  {elem.hint}
+                </div> :
+                <div className="Main-Hint">
+                </div>
+              }
+              <div
+                className="Main-HintReveal br2"
+                onClick={() => {this.handleHintClick(elem, idx)}}
+              >
+                -{elem.points} pts
+              </div>
+            </div>)
+          }
         </div>
         <div className="Main-SV-Container">
           <StreetView
@@ -82,7 +113,13 @@ class Main extends Component {
           .get(`http://localhost:3000/api/hints/${secretCityId}`);
       })
       .then((hints) => {
-        console.log(hints.data);
+        for (const hint of hints.data) {
+          hint.showHint = false
+        }
+
+        this.setState({
+          hints: hints.data
+        });
       })
       .catch((err) => {
         console.error(err);

@@ -47,10 +47,8 @@ html, body {
 
 .Main-HintContainer {
   background-color: white;
-  /*border-left: 6px solid #e8fdf5;
-  border-right: 6px solid #e8fdf5;*/
   margin-left: 15px;
-  padding: 20px 24px;
+  padding: 10px 44px;
   width: 48%;
 }
 
@@ -58,7 +56,38 @@ html, body {
   /*border-left: 6px solid #e8fdf5;
   border-right: 3px solid #e8fdf5;*/
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin-right: 15px;
   width: 48%;
+}
+
+.Main-HintBox {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 12px 0px;
+  padding: 8px;
+  text-align: center;
+}
+
+.Main-Hint {
+  font-size: 1.3rem;
+  min-height: 24px;
+  width: 60%;
+}
+
+.Main-HintReveal {
+  border: 1px solid black;
+  font-size: 0.8rem;
+  margin-top: 12px;
+  max-height: 25px;
+  max-width: 70px;
+  padding: 5px;
+  text-align: center;
+}
+
+.Main-HintReveal:hover {
+  border: 1px solid #d12d2d;
+  color: #d12d2d;
+  cursor: pointer;
 }

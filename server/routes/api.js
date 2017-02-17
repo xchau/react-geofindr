@@ -20,6 +20,7 @@ router.get('/hints/:id', (req, res) => {
   knex('hints')
     .select('*')
     .where('city_id', id)
+    .orderBy('points', 'ASC')
     .then((rows) => {
       if (!rows.length) {
         return next();
