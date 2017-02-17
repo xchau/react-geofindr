@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import SimpleMap from '../SimpleMap/SimpleMap';
 import StreetView from '../StreetView/StreetView';
 import './Main.css';
@@ -14,8 +15,8 @@ class Main extends Component {
       markers: [],
       zoom: 2,
       place: {
-        lat: 34.696694,
-        lng: 135.188639
+        lat: null,
+        lng: null
       }
     }
     // 38.308039, 26.376333
@@ -54,6 +55,25 @@ class Main extends Component {
         </div>
       </div>
     </div>
+  }
+
+  componentDidMount() {
+    axios
+      .get('http://localhost:3000/api')
+      .then((res) => {
+        const randNum = Math.floor(Math.random()) * (res.data.length + 1);
+
+        const newPlace = {
+          lat: res.data[randNum].lat,
+          lng: res.data[randNum].lng
+        }
+
+        this.setState({
+          place: newPlace
+        });
+        console.log(res.data[randNum]);
+        console.log(this.state);
+      });
   }
 }
 

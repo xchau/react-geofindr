@@ -5,18 +5,19 @@ class StreetView extends Component {
   constructor(props) {
     super(props);
 
-    const place = this.props.place;
-
     this.state = {
-      lat: place.lat,
-      lng: place.lng
+      lat: this.props.place.lat,
+      lng: this.props.place.lng
     }
   }
 
   render() {
     const googleMapsApiKey = 'AIzaSyDe3s-A5dg6QWWI16Sd11C3_JtuoYavrys';
     const panoOptions = {
-      position: this.state,
+      position: {
+        lat: this.state.lat,
+        lng: this.state.lng
+      },
       pov: {
         heading: 20,
         pitch: 2,
@@ -37,15 +38,13 @@ class StreetView extends Component {
     </div>
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   // const currentLocation = nextProps.currentLocation;
-  //   // const nextPosition = this.state.position;
-  //   //
-  //   // nextState.position.lat = currentLocation.lat;
-  //   // nextState.position.lng = currentLocation.lng;
-  //
-  //   this.setState(nextProps.currentLocation);
-  // }
+  componentWillReceiveProps(nextProps) {
+
+
+    this.setState(nextProps.place);
+    console.log(nextProps.place);
+    console.log(this.state)
+  }
 }
 
 export default StreetView;
