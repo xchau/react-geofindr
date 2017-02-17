@@ -23,22 +23,38 @@ html, body {
   justify-content: center;
 }
 
+.Main-Submit {
+  align-items: center;
+  background-color: #92e8c7;
+  color: white;
+  display: flex;
+  float: right;
+  font-size: 1.3rem;
+  justify-content: center;
+  height: 38px;
+  padding: 4px 10px;
+  width: 96px;
+}
+
+.Main-Submit:hover {
+  background-color: #77f0c1;
+  cursor: pointer;
+}
+
 .Main-ConsoleHeader {
-  /*background-color: #e8fdf5;*/
   border-bottom: 6px solid #e8fdf5;
   display: flex;
   justify-content: center;
-  min-height: 20px;
-  padding: 10px;
+  min-height: 32px;
+  padding: 4px;
 }
 
 .Main-HintsTitle {
   font-family: Amatic SC, Raleway, sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.9rem;
 }
 
 .Main-Console {
-  /*background: url('./media/pattern2.jpg');*/
   background-color: #fab3a0;
   display: flex;
   justify-content: space-between;
@@ -53,8 +69,6 @@ html, body {
 }
 
 .Main-SV-Container {
-  /*border-left: 6px solid #e8fdf5;
-  border-right: 3px solid #e8fdf5;*/
   display: flex;
   justify-content: space-around;
   margin-right: 15px;

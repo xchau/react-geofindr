@@ -57,7 +57,7 @@ class Main extends Component {
       </div>
       <div className="Main-ConsoleHeader
         ">
-        <h3 className="Main-HintsTitle">Hints</h3>
+        <div className="Main-Submit br2">Guess!</div>
       </div>
       <div className="Main-Console">
         <div className="Main-HintContainer">
@@ -95,9 +95,9 @@ class Main extends Component {
     axios
       .get('http://localhost:3000/api/city')
       .then((cities) => {
-        const randNum = Math.floor(Math.random()) * (cities.data.length + 1);
+        const randNum = Math.floor(Math.random() * cities.data.length);
 
-        console.log(cities.data);
+        console.log(randNum);
         secretCityId = cities.data[randNum].id;
 
         const newPlace = {
