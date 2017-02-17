@@ -9,7 +9,9 @@ const MapElem = withGoogleMap(props => (
       center={props.center}
       zoom={props.zoom}
       defaultOptions={{
-        streetViewControl: false
+        streetViewControl: false,
+        maxZoom: 10,
+        gestureHandling: 'none'
       }}
     >
       {

@@ -18,13 +18,14 @@ html, body {
 
 .Main-SM-Container {
   background: url('./media/pattern.png');
-  border-bottom: 2px solid #e8fdf5;
+  border-bottom: 6px solid #e8fdf5;
   display: flex;
   justify-content: center;
 }
 
 .Main-ConsoleHeader {
-  background-color: #e8fdf5;
+  /*background-color: #e8fdf5;*/
+  border-bottom: 6px solid #e8fdf5;
   display: flex;
   justify-content: center;
   min-height: 20px;
@@ -37,21 +38,27 @@ html, body {
 }
 
 .Main-Console {
-  background: url('./media/pattern2.jpg');
+  /*background: url('./media/pattern2.jpg');*/
+  background-color: #fab3a0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
 }
 
 .Main-HintContainer {
   background-color: white;
-  border-left: 6px solid #e8fdf5;
+  /*border-left: 6px solid #e8fdf5;
+  border-right: 6px solid #e8fdf5;*/
   margin-left: 15px;
+  padding: 20px 24px;
   width: 48%;
 }
 
 .Main-SV-Container {
-  border-right: 6px solid #e8fdf5;
+  /*border-left: 6px solid #e8fdf5;
+  border-right: 3px solid #e8fdf5;*/
+  display: flex;
+  justify-content: center;
   margin-right: 15px;
   width: 48%;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactStreetView from 'react-streetview';
+import './StreetView.css'
 
 class StreetView extends Component {
   constructor(props) {
@@ -29,21 +30,21 @@ class StreetView extends Component {
     return <div style={{
       width: '100%',
       height: '300px',
-      backgroundColor: '#eee'
+      backgroundColor: '#fff'
     }}>
-      <ReactStreetView
-        apiKey={googleMapsApiKey}
-        streetViewPanoramaOptions={panoOptions}
-      />
+      {
+        this.state.lat ?
+        <ReactStreetView
+          apiKey={googleMapsApiKey}
+          streetViewPanoramaOptions={panoOptions}
+        /> :
+        <div className="SV-Spinner"></div>
+      }
     </div>
   }
 
   componentWillReceiveProps(nextProps) {
-
-
     this.setState(nextProps.place);
-    console.log(nextProps.place);
-    console.log(this.state)
   }
 }
 

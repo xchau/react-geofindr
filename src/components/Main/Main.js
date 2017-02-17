@@ -17,7 +17,9 @@ class Main extends Component {
       place: {
         lat: null,
         lng: null
-      }
+      },
+      maxZoom: 10,
+      gestureHandling: 'none'
     }
     // 38.308039, 26.376333
     // lat: 34.696694,
@@ -27,7 +29,7 @@ class Main extends Component {
   }
 
   pinMarkerOnClick(nextState) {
-    console.log(nextState.markers[0]);
+    // console.log(nextState.markers[0]);
     this.setState(nextState);
   }
 
@@ -49,7 +51,6 @@ class Main extends Component {
         </div>
         <div className="Main-SV-Container">
           <StreetView
-            currentLocation={this.state.markers[0]}
             place={this.state.place}
           />
         </div>
@@ -58,21 +59,33 @@ class Main extends Component {
   }
 
   componentDidMount() {
+    let secretCityId;
+
     axios
-      .get('http://localhost:3000/api')
-      .then((res) => {
-        const randNum = Math.floor(Math.random()) * (res.data.length + 1);
+      .get('http://localhost:3000/api/city')
+      .then((cities) => {
+        const randNum = Math.floor(Math.random()) * (cities.data.length + 1);
+
+        console.log(cities.data);
+        secretCityId = cities.data[randNum].id;
 
         const newPlace = {
-          lat: res.data[randNum].lat,
-          lng: res.data[randNum].lng
-        }
+          lat: cities.data[randNum].lat,
+          lng: cities.data[randNum].lng
+        };
 
         this.setState({
           place: newPlace
         });
-        console.log(res.data[randNum]);
-        console.log(this.state);
+
+        return axios
+          .get(`http://localhost:3000/api/hints/${secretCityId}`);
+      })
+      .then((hints) => {
+        console.log(hints.data);
+      })
+      .catch((err) => {
+        console.error(err);
       });
   }
 }
