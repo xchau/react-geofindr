@@ -1,10 +1,10 @@
 'use strict';
 
 exports.seed = function(knex) {
-  return knex('table_name')
+  return knex('hints')
     .del()
     .then(() => {
-      return knex('locations').insert([{
+      return knex('hints').insert([{
         id: 1,
         city_id: 1,
         hint: 'Sister city to Seattle.',

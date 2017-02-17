@@ -1,7 +1,7 @@
 'use strict';
 
 exports.seed = function(knex) {
-  return knex('table_name')
+  return knex('locations')
     .del()
     .then(() => {
       return knex('locations').insert([{
