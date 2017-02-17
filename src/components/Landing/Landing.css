@@ -1,13 +1,22 @@
+.Landing-BG {
+  background: url('../Main/media/pattern.png');
+}
+
 .Landing-Container {
+  background-color: white;
+  margin: 0 auto;
   min-height: 100vh;
-  padding-top: 30px;
+  padding-top: 10px;
+  width: 86%;
 }
 
 .Landing-Hero {
   background: url('./media/hero2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   margin-bottom: 10px;
   min-height: 520px;
-  background-size: cover;
 }
 
 .Landing-Row {
@@ -20,12 +29,13 @@
 .Landing-Name {
   color: #86ebd0;
   font-family: Barrio, cursive;
-  font-size: 3.6rem;
+  font-size: 4.2rem;
 }
 
 .Landing-Button {
   border: 1px solid black;
   color: black;
+  font-size: 1.2rem;
   margin-top: 4px;
   padding: 8px 12px;
   text-decoration: none;
@@ -48,6 +58,7 @@
 
 .Landing-Link {
   color: darkgrey;
+  font-size: 1.3rem;
   text-decoration: none;
 }
 

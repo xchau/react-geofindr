@@ -17,8 +17,8 @@ const MapElem = withGoogleMap(props => (
           return <Marker
             key={idx}
             position={marker}
-            icon="https://campus-map.stanford.edu/images/new/cm-target.png"
-            title={`[${marker.lat.toFixed(2)}-ish, ${marker.lng.toFixed(2)}-ish]`} 
+            // icon="https://campus-map.stanford.edu/images/new/cm-target.png"
+            title={`[${marker.lat.toFixed(2)}-ish, ${marker.lng.toFixed(2)}-ish]`}
           />
         })
       }
@@ -45,6 +45,7 @@ class SimpleMap extends Component {
 
     nextState.markers = [];
     nextState.markers.push(latLng)
+    console.log(nextState);
 
     this.props.pinMarkerOnClick(nextState);
   }
@@ -55,7 +56,7 @@ class SimpleMap extends Component {
     return (
       <MapElem
         containerElement={
-          <div style={{ height: `400px`, width: `700px` }} />
+          <div style={{ height: `500px`, width: `80%` }} />
         }
         mapElement={
           <div style={{ height: `100%` }} />

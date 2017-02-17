@@ -18,8 +18,8 @@ class StreetView extends Component {
     const panoOptions = {
       position: this.state,
       pov: {
-        heading: 34,
-        pitch: 10,
+        heading: 20,
+        pitch: 2,
       },
       addressControl: false,
       showRoadLabels: false

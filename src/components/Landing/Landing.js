@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import './Landing.css';
 
 function Landing(props) {
-  return (
+  return <div className="Landing-BG">
     <div className="Landing-Container">
       <div className="Landing-Hero">
       </div>
@@ -22,7 +22,7 @@ function Landing(props) {
         </div>
       </div>
     </div>
-  );
+  </div>
 }
 
 export default Landing;

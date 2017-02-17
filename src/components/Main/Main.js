@@ -19,6 +19,9 @@ class Main extends Component {
         lng: 135.188639
       }
     }
+    // 38.308039, 26.376333
+    // lat: 34.696694,
+    // lng: 135.188639
 
     this.pinMarkerOnClick = this.pinMarkerOnClick.bind(this);
   }
