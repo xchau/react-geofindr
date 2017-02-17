@@ -16,8 +16,8 @@ exports.seed = function(knex) {
           id: 2,
           city: 'Izmir',
           country: 'Turkey',
-          lat: 38.696694,
-          lng: 135.188639,
+          lat: 38.402741,
+          lng: 27.125614,
           img_url: 'https://userscontent2.emaze.com/images/04c2ac0f-c29d-4746-892f-6e1f253762e6/a00f0c75baf1b0c1f0fa1db8c9e4f89d.jpg',
           link: 'https://en.wikipedia.org/wiki/%C4%B0zmir'
         }, {

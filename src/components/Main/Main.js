@@ -55,8 +55,7 @@ class Main extends Component {
           pinMarkerOnClick={this.pinMarkerOnClick}
         />
       </div>
-      <div className="Main-ConsoleHeader
-        ">
+      <div className="Main-ConsoleHeader">
         <div className="Main-Submit br2">Guess!</div>
       </div>
       <div className="Main-Console">
@@ -97,6 +96,7 @@ class Main extends Component {
       .then((cities) => {
         const randNum = Math.floor(Math.random() * cities.data.length);
 
+        console.log(cities.data[randNum]);
         console.log(randNum);
         secretCityId = cities.data[randNum].id;
 

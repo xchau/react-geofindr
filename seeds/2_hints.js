@@ -37,7 +37,13 @@ exports.seed = function(knex) {
       }, {
         id: 7,
         city_id: 2,
-        hint: ''
+        hint: 'Care to see the Hagia Sophia?',
+        points: 600
+      }, {
+        id: 8,
+        city_id: 2,
+        hint: 'Ancient Byzantium was located here',
+        points: 400
       }]);
     })
     .then(() => {
