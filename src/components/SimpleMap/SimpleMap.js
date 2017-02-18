@@ -58,7 +58,7 @@ class SimpleMap extends Component {
     return (
       <MapElem
         containerElement={
-          <div style={{ height: `500px`, width: `80%` }} />
+          <div style={{ height: `300px`, width: `100%` }} />
         }
         mapElement={
           <div style={{ height: `100%` }} />

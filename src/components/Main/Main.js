@@ -74,12 +74,18 @@ class Main extends Component {
 
   render() {
     return <div className="Main-Content">
-      <div className="Main-SM-Container">
-        <SimpleMap
-          state={this.state}
-          pinMarkerOnClick={this.pinMarkerOnClick}
-        />
+      <div className="Main-SV-Row">
+        <div className="Main-SV-Container">
+          <StreetView
+            place={this.state.place}
+          />
+          {/* <SimpleMap
+            state={this.state}
+            pinMarkerOnClick={this.pinMarkerOnClick}
+          /> */}
+        </div>
       </div>
+
       <div className="Main-ConsoleHeader">
         {
           this.state.gameFinished ? <div>
@@ -114,9 +120,13 @@ class Main extends Component {
             </div>)
           }
         </div>
-        <div className="Main-SV-Container">
-          <StreetView
+        <div className="Main-SM-Container">
+          {/* <StreetView
             place={this.state.place}
+          /> */}
+          <SimpleMap
+            state={this.state}
+            pinMarkerOnClick={this.pinMarkerOnClick}
           />
         </div>
       </div>

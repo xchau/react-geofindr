@@ -29,7 +29,7 @@ class StreetView extends Component {
 
     return <div style={{
       width: '100%',
-      height: '300px',
+      height: '100%',
       backgroundColor: '#fff'
     }}>
       {

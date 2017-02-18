@@ -16,11 +16,37 @@ html, body {
   display: block;
 }
 
-.Main-SM-Container {
+/*.Main-SM-Container {
   background: url('./media/pattern.png');
   border-bottom: 6px solid #e8fdf5;
   display: flex;
   justify-content: center;
+}*/
+
+.Main-SM-Container {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 15px;
+  width: 48%;
+}
+
+/*.Main-SV-Container {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 15px;
+  width: 48%;
+}*/
+
+.Main-SV-Row {
+  background: url('./media/pattern.png');
+  border-bottom: 6px solid #e8fdf5;
+  height: 400px;
+}
+
+.Main-SV-Container {
+  height: 100%;
+  margin: 0 auto;
+  width: 78%;
 }
 
 .Main-Submit {
@@ -66,13 +92,6 @@ html, body {
   background-color: white;
   margin-left: 15px;
   padding: 10px 44px;
-  width: 48%;
-}
-
-.Main-SV-Container {
-  display: flex;
-  justify-content: space-around;
-  margin-right: 15px;
   width: 48%;
 }
 
