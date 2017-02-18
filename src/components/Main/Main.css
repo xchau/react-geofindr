@@ -106,3 +106,14 @@ html, body {
   color: #d12d2d;
   cursor: pointer;
 }
+
+.Main-ScoreLine {
+  font-size: 1.3rem;
+  min-height: 32px;
+}
+
+.Main-Score {
+  color: lightcoral;
+  font-size: 1.4rem;
+  font-weight: 700;
+}

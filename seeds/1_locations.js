@@ -44,6 +44,22 @@ exports.seed = function(knex) {
           lng: 27.980660,
           img_url: 'https://s-media-cache-ak0.pinimg.com/564x/bb/42/cc/bb42ccc7aeef57fc5b1dab85937a685c.jpg',
           link: 'https://en.wikipedia.org/wiki/Varna'
+        }, {
+          id: 6,
+          city: 'Kumasi',
+          country: 'Ghana',
+          lat: 6.685249,
+          lng: -1.611490,
+          img_url: 'http://msaudcolumbia.org/spring/2012/wp-content/flagallery/gallery/final-kumasi-site-introduction2-23.jpg',
+          link: 'https://en.wikipedia.org/wiki/Kumasi'
+        }, {
+          id: 7,
+          city: 'New York City',
+          country: 'New York',
+          lat: 40.646979,
+          lng: -73.962654,
+          img_url: 'https://cdn2.vox-cdn.com/uploads/chorus_image/image/52919137/shutterstock_270402566.0.0.0.jpg',
+          link: 'https://en.wikipedia.org/wiki/New_York_City'
         }]);
     })
     .then(() => {

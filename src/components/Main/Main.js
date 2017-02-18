@@ -21,7 +21,8 @@ class Main extends Component {
       maxZoom: 10,
       gestureHandling: 'none',
       hints: [],
-      userPoints: 1200
+      userPoints: 1200,
+      gameFinished: false
     }
 
     this.pinMarkerOnClick = this.pinMarkerOnClick.bind(this);
@@ -61,12 +62,13 @@ class Main extends Component {
       const answer = this.state.place;
       const nextState = this.state;
 
+      nextState.gameFinished = true;
       nextState.markers.push(answer);
       nextState.userPoints += calculateBonus(distance);
       nextState.userPoints = Math.ceil(nextState.userPoints);
 
       this.setState(nextState);
-      alert(`You got ${this.state.userPoints} points!`);
+      // alert(`You got ${this.state.userPoints} points!`);
     }
   }
 
@@ -79,12 +81,17 @@ class Main extends Component {
         />
       </div>
       <div className="Main-ConsoleHeader">
-        <div
-          className="Main-Submit br2"
-          onClick={this.handleSubmitClick}
-        >
-          Guess!
-        </div>
+        {
+          this.state.gameFinished ? <div>
+            <p className="Main-ScoreLine">You got <span className="Main-Score">{this.state.userPoints}</span> points!</p>
+          </div> :
+          <div
+            className="Main-Submit br2"
+            onClick={this.handleSubmitClick}
+          >
+            Guess!
+          </div>
+        }
       </div>
       <div className="Main-Console">
         <div className="Main-HintContainer">
@@ -175,7 +182,8 @@ function toRad(value) {
 }
 
 function calculateBonus(km) {
-  return (Math.pow(((km + 100) / km) * 0.2, 6) * 4000) > 1 ? 10000 : (Math.pow(((km + 100) / km) * 0.2, 6) * 4000) * 10000;
+  const temp = Math.pow(((km + 100) / km) * 0.2, 6) * 4000;
+  return  temp > 1 ? 10000 : temp * 10000;
 }
 
 export default Main;

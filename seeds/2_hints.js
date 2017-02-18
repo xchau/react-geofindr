@@ -18,7 +18,7 @@ exports.seed = function(knex) {
         id: 3,
         city_id: 3,
         hint: 'A great place for pirozhki',
-        points: 200
+        points: 600
       }, {
         id: 4,
         city_id: 4,
@@ -42,8 +42,73 @@ exports.seed = function(knex) {
       }, {
         id: 8,
         city_id: 2,
-        hint: 'Ancient Byzantium was located here',
+        hint: 'The land of Ancient Byzantium',
         points: 400
+      }, {
+        id: 9,
+        city_id: 3,
+        hint: 'Most populous city in the EU',
+        points: 200
+      }, {
+        id: 10,
+        city_id: 3,
+        hint: 'Razed during WWII during its occupation',
+        points: 400
+      }, {
+        id: 11,
+        city_id: 4,
+        hint: 'Home town of famous singer Alcione',
+        points: 200
+      }, {
+        id: 12,
+        city_id: 4,
+        hint: 'Você fala português? Olhe para o nordeste',
+        points: 600
+      }, {
+        id: 13,
+        city_id: 5,
+        hint: 'Major tourist destination',
+        points: 200
+      }, {
+        id: 14,
+        city_id: 5,
+        hint: 'Count Dracula\'s "transportation hub" in Bram Stoker\'s classic novel',
+        points: 400
+      }, {
+        id: 15,
+        city_id: 5,
+        hint: 'Seaside resort facing the Black Sea',
+        points: 600
+      }, {
+        id: 16,
+        city_id: 6,
+        hint: 'Features a tropical wet & dry climate',
+        points: 200
+      }, {
+        id: 17,
+        city_id: 6,
+        hint: 'Known as "The Garden City"',
+        points: 400
+      }, {
+        id: 18,
+        city_id: 6,
+        hint: 'Nearby to Lake Bosomtwe, the Ashanti Region\'s only natural lake',
+        points: 600
+      }, {
+        id: 19,
+        city_id: 7,
+        hint: '28,053 people per square mile',
+        points: 200
+      }, {
+        id: 20,
+        city_id: 7,
+        hint: 'Five boroughs',
+        points: 400
+      }, {
+        id: 21,
+        city_id: 7,
+        hint: 'Occupied during the US recession',
+        points: 600
       }]);
     })
     .then(() => {
