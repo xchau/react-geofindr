@@ -39,6 +39,7 @@ html, body {
 .Main-Submit:hover {
   background-color: #77f0c1;
   cursor: pointer;
+  font-size: 1.4rem;
 }
 
 .Main-ConsoleHeader {

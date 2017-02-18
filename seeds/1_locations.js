@@ -36,6 +36,14 @@ exports.seed = function(knex) {
           lng: -44.211207,
           img_url: 'https://s-media-cache-ak0.pinimg.com/originals/01/00/c6/0100c61fbbb2b0449fe0c1db3fc87306.jpg',
           link: 'https://en.wikipedia.org/wiki/S%C3%A3o_Lu%C3%ADs,_Maranh%C3%A3o'
+        }, {
+          id: 5,
+          city: 'Varna',
+          country: 'Bulgaria',
+          lat: 43.218129,
+          lng: 27.980660,
+          img_url: 'https://s-media-cache-ak0.pinimg.com/564x/bb/42/cc/bb42ccc7aeef57fc5b1dab85937a685c.jpg',
+          link: 'https://en.wikipedia.org/wiki/Varna'
         }]);
     })
     .then(() => {

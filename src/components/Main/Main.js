@@ -21,11 +21,12 @@ class Main extends Component {
       maxZoom: 10,
       gestureHandling: 'none',
       hints: [],
-      userPoints: 0
+      userPoints: 1200
     }
 
     this.pinMarkerOnClick = this.pinMarkerOnClick.bind(this);
     this.handleHintClick = this.handleHintClick.bind(this);
+    this.handleSubmitClick = this.handleSubmitClick.bind(this);
   }
 
   pinMarkerOnClick(nextState) {
@@ -38,12 +39,34 @@ class Main extends Component {
     if (!hint.showHint) {
       nextState.hints[idx].showHint = true;
       nextState.userPoints -= hint.points;
-      console.log(nextState.userPoints);
 
       this.setState(nextState);
     }
     else {
       console.log('Don\'t hide your precious hint(s)!');
+    }
+  }
+
+  handleSubmitClick() {
+    if (!this.state.markers.length) {
+      // Toast message here
+      alert('Try pinnning your guess on the map!');
+    }
+    else {
+      const lat1 = this.state.place.lat;
+      const lng1 = this.state.place.lng;
+      const lat2 = this.state.markers[0].lat;
+      const lng2 = this.state.markers[0].lng;
+      const distance = calcCrow(lat1, lng1, lat2, lng2);
+      const answer = this.state.place;
+      const nextState = this.state;
+
+      nextState.markers.push(answer);
+      nextState.userPoints += calculateBonus(distance);
+      nextState.userPoints = Math.ceil(nextState.userPoints);
+
+      this.setState(nextState);
+      alert(`You got ${this.state.userPoints} points!`);
     }
   }
 
@@ -56,7 +79,12 @@ class Main extends Component {
         />
       </div>
       <div className="Main-ConsoleHeader">
-        <div className="Main-Submit br2">Guess!</div>
+        <div
+          className="Main-Submit br2"
+          onClick={this.handleSubmitClick}
+        >
+          Guess!
+        </div>
       </div>
       <div className="Main-Console">
         <div className="Main-HintContainer">
@@ -125,6 +153,29 @@ class Main extends Component {
         console.error(err);
       });
   }
+}
+
+function calcCrow(lat1, lon1, lat2, lon2) {
+  const R = 6371; // km
+  const dLat = toRad(lat2-lat1);
+  const dLon = toRad(lon2-lon1);
+  lat1 = toRad(lat1);
+  lat2 = toRad(lat2);
+
+  const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  const d = R * c;
+  return d;
+}
+
+  // Converts numeric degrees to radians
+function toRad(value) {
+  return value * Math.PI / 180;
+}
+
+function calculateBonus(km) {
+  return (Math.pow(((km + 100) / km) * 0.2, 6) * 4000) > 1 ? 10000 : (Math.pow(((km + 100) / km) * 0.2, 6) * 4000) * 10000;
 }
 
 export default Main;
