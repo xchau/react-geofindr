@@ -22,6 +22,9 @@
     "react-streetview": "^1.0.1"
   },
   "proxy": "http://localhost:3001",
+  "engines": {
+    "node": "7.5.0"
+  },
   "scripts": {
     "start": "react-scripts start & nodemon server/bin/www",
     "build": "react-scripts build",
