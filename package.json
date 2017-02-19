@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "express": "^4.14.1",
+    "foreman": "^2.0.0",
     "humps": "^2.0.0",
     "knex": "^0.12.7",
     "lodash": "^4.17.4",
@@ -26,11 +27,13 @@
     "node": "7.5.0"
   },
   "scripts": {
+    "nf": "nf",
     "start": "react-scripts start & nodemon server/bin/www",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "knex": "knex",
-    "start-prod": "env PORT=3000 nodemon server/bin/www"
+    "start-prod": "env PORT=3000 nodemon server/bin/www",
+    "heroku-postbuild": "knex migrate:latest"
   }
 }
