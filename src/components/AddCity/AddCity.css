@@ -1,0 +1,35 @@
+.AddCity-Container {
+  padding: 20px 50px;
+}
+
+.AddCity-Col {
+  display: flex;
+  flex-direction: column;
+  width: 44%;
+}
+
+.AddCity-FormElems {
+  display: flex;
+}
+
+.AddCity-InputField1 {
+  border: 1px solid #363739;
+  border-radius: 5px;
+  color: #27292d;
+  font-family: Raleway, sans-serif;
+  font-size: 0.9rem;
+  padding: 3px;
+  margin: 12px 0px 12px 15px;
+  width: 40%;
+}
+
+.AddCity-InputField2 {
+  border: 1px solid #363739;
+  border-radius: 5px;
+  color: #27292d;
+  font-family: Raleway, sans-serif;
+  font-size: 0.9rem;
+  padding: 3px;
+  margin: 12px 0px 12px 15px;
+  width: 80%;
+}

@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import SimpleMap from '../SimpleMap/SimpleMap';
 import StreetView from '../StreetView/StreetView';
+import Modal from '../Modal/Modal';
 import './Main.css';
+import '../Modal/Modal.css';
 
 class Main extends Component {
   constructor(props) {
@@ -15,6 +17,8 @@ class Main extends Component {
       markers: [],
       zoom: 2,
       place: {
+        city: '',
+        country: '',
         lat: null,
         lng: null
       },
@@ -22,12 +26,14 @@ class Main extends Component {
       gestureHandling: 'none',
       hints: [],
       userPoints: 1200,
-      gameFinished: false
+      gameFinished: false,
+      modalOpen: false
     }
 
     this.pinMarkerOnClick = this.pinMarkerOnClick.bind(this);
     this.handleHintClick = this.handleHintClick.bind(this);
     this.handleSubmitClick = this.handleSubmitClick.bind(this);
+    this.handleModalOpen = this.handleModalOpen.bind(this);
   }
 
   pinMarkerOnClick(nextState) {
@@ -68,7 +74,14 @@ class Main extends Component {
       nextState.userPoints = Math.ceil(nextState.userPoints);
 
       this.setState(nextState);
-      // alert(`You got ${this.state.userPoints} points!`);
+    }
+  }
+
+  handleModalOpen() {
+    if (!this.state.modalOpen) {
+      this.setState({
+        modalOpen: true
+      });
     }
   }
 
@@ -79,17 +92,36 @@ class Main extends Component {
           <StreetView
             place={this.state.place}
           />
-          {/* <SimpleMap
-            state={this.state}
-            pinMarkerOnClick={this.pinMarkerOnClick}
-          /> */}
         </div>
       </div>
 
       <div className="Main-ConsoleHeader">
         {
-          this.state.gameFinished ? <div>
-            <p className="Main-ScoreLine">You got <span className="Main-Score">{this.state.userPoints}</span> points!</p>
+          this.state.gameFinished ? <div className="Main-ConsoleWrapper">
+            <div>
+              <p className="Main-ScoreLine">
+                You got <span className="Main-Score">{this.state.userPoints}</span> points!
+              </p>
+            </div>
+            <div>
+              <a
+                href="#"
+                className="Main-AboutLink"
+                onClick={this.handleModalOpen}
+              >
+                Learn More about
+                <span className="Main-ConsoleHighlight">
+                  {this.state.place.city}, {this.state.place.country}
+                </span>
+              </a>
+              {
+                this.state.modalOpen ? <Modal className="Modal-Container">
+                  <div className="Modal-Content">
+
+                  </div>
+                </Modal> : null
+              }
+            </div>
           </div> :
           <div
             className="Main-Submit br2"
@@ -121,9 +153,6 @@ class Main extends Component {
           }
         </div>
         <div className="Main-SM-Container">
-          {/* <StreetView
-            place={this.state.place}
-          /> */}
           <SimpleMap
             state={this.state}
             pinMarkerOnClick={this.pinMarkerOnClick}
@@ -141,11 +170,13 @@ class Main extends Component {
       .then((cities) => {
         const randNum = Math.floor(Math.random() * cities.data.length);
 
-        console.log(cities.data[randNum]);
-        console.log(randNum);
+        // console.log(cities.data[randNum]);
+        // console.log(cities.data);
         secretCityId = cities.data[randNum].id;
 
         const newPlace = {
+          city: cities.data[randNum].city,
+          country: cities.data[randNum].country,
           lat: cities.data[randNum].lat,
           lng: cities.data[randNum].lng
         };
@@ -186,7 +217,6 @@ function calcCrow(lat1, lon1, lat2, lon2) {
   return d;
 }
 
-  // Converts numeric degrees to radians
 function toRad(value) {
   return value * Math.PI / 180;
 }
