@@ -156,3 +156,14 @@ html, body {
   margin-left: 10px;
   text-decoration: none;
 }
+
+.Main-Link {
+  color: lightcoral;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.Main-ModalPic {
+  height: 100%;
+  width: 60%;
+}

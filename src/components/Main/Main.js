@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import Modal from 'react-modal';
+import { Link } from 'react-router';
 import axios from 'axios';
 import SimpleMap from '../SimpleMap/SimpleMap';
 import StreetView from '../StreetView/StreetView';
-import Modal from '../Modal/Modal';
 import './Main.css';
-import '../Modal/Modal.css';
 
 class Main extends Component {
   constructor(props) {
@@ -19,6 +19,8 @@ class Main extends Component {
       place: {
         city: '',
         country: '',
+        link: '',
+        imgUrl: '',
         lat: null,
         lng: null
       },
@@ -86,6 +88,27 @@ class Main extends Component {
   }
 
   render() {
+    const customStyles = {
+      overlay: {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(255, 255, 255, 0.75)',
+        zIndex: '100'
+      },
+      content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        margin: '0 auto',
+        transform: 'translate(-50%, -50%)',
+        width: '80%',
+      }
+    };
+
     return <div className="Main-Content">
       <div className="Main-SV-Row">
         <div className="Main-SV-Container">
@@ -115,10 +138,31 @@ class Main extends Component {
                 </span>
               </a>
               {
-                this.state.modalOpen ? <Modal className="Modal-Container">
-                  <div className="Modal-Content">
-
-                  </div>
+                this.state.modalOpen ? <Modal
+                  isOpen={this.state.modalOpen}
+                  // onAfterOpen={afterOpenFn}
+                  // onRequestClose={requestCloseFn}
+                  // closeTimeoutMS={n}
+                  style={customStyles}
+                  contentLabel="Modal"
+                >
+                  <section>
+                    <h2>{this.state.place.city}, {this.state.place.country}</h2>
+                    <img
+                      alt="City Landscape"
+                      className="Main-ModalPic" src={this.state.place.imgUrl}
+                    />
+                    <p>
+                      <a
+                        className="Main-Link"
+                        href={this.state.place.link}
+                        target="_blank"
+                      >
+                        Learn More!</a>
+                    </p>
+                    <p>or</p>
+                    <Link to="/" className="Main-Link">Try again</Link>
+                  </section>
                 </Modal> : null
               }
             </div>
@@ -177,6 +221,8 @@ class Main extends Component {
         const newPlace = {
           city: cities.data[randNum].city,
           country: cities.data[randNum].country,
+          link: cities.data[randNum].link,
+          imgUrl: cities.data[randNum].imgUrl,
           lat: cities.data[randNum].lat,
           lng: cities.data[randNum].lng
         };

@@ -20,6 +20,7 @@
     "react-dom": "^15.4.2",
     "react-geomicons": "^2.1.0",
     "react-google-maps": "6",
+    "react-modal": "^1.6.5",
     "react-router": "^3.0.2",
     "react-streetview": "^1.0.1"
   },
