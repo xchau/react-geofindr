@@ -53,7 +53,7 @@ class AddCity extends Component {
 
     axios({
       method: 'post',
-      url: 'http://localhost:3000/api/addcity',
+      url: '/api/addcity',
       data: data
     })
     .then((res) => {

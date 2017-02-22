@@ -210,7 +210,7 @@ class Main extends Component {
     let secretCityId;
 
     axios
-      .get('http://localhost:3000/api/city')
+      .get('/api/city')
       .then((cities) => {
         const randNum = Math.floor(Math.random() * cities.data.length);
 
@@ -232,7 +232,7 @@ class Main extends Component {
         });
 
         return axios
-          .get(`http://localhost:3000/api/hints/${secretCityId}`);
+          .get(`/api/hints/${secretCityId}`);
       })
       .then((hints) => {
         for (const hint of hints.data) {
