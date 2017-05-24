@@ -82,7 +82,7 @@ html, body {
 }
 
 .Main-Console {
-  background-color: #fab3a0;
+  /*background-color: #fab3a0;*/
   display: flex;
   justify-content: space-between;
   width: 100%;
