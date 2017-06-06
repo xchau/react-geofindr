@@ -1,4 +1,4 @@
-#Geofindr
+# Geofindr
 
 This Geoguessr clone is provides a fun way to learn about the world around us.
 
