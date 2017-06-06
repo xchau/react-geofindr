@@ -2,8 +2,8 @@
 
 This Geoguessr clone is provides a fun way to learn about the world around us.
 
-![landing](./public/landing.png)
-![play](./public/play.png)
+[![landing](./public/landing.png)](https://github.com/xchau/react-geofindr)
+[![play](./public/play.png)](https://github.com/xchau/react-geofindr)
 
 ## Instructions
 1. The large map at the top shows a street view of a city located somewhere in the world. Your goal as the player is to guess this city!
