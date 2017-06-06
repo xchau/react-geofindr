@@ -140,9 +140,6 @@ class Main extends Component {
               {
                 this.state.modalOpen ? <Modal
                   isOpen={this.state.modalOpen}
-                  // onAfterOpen={afterOpenFn}
-                  // onRequestClose={requestCloseFn}
-                  // closeTimeoutMS={n}
                   style={customStyles}
                   contentLabel="Modal"
                 >
